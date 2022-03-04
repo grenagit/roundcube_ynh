@@ -148,11 +148,9 @@ ynh_composer_exec --commands="require kolab/net_ldap3"
 # Install contextmenu and automatic_addressbook plugins
 # https://plugins.roundcube.net/packages/sblaisot/automatic_addressbook
 # https://plugins.roundcube.net/packages/johndoh/contextmenu
-ynh_composer_exec --commands="require \
-    johndoh/contextmenu $contextmenu_version \
-    sblaisot/automatic_addressbook $automatic_addressbook_version"
+ynh_composer_exec --commands="require johndoh/contextmenu $contextmenu_version"
 
-installed_plugins+=" 'contextmenu', 'automatic_addressbook',"
+installed_plugins+=" 'contextmenu',"
 
 ynh_add_config --template="../conf/enigma.config.inc.php" --destination="$final_path/plugins/enigma/config.inc.php"
 mkdir -p "$final_path/plugins/enigma/home"
